@@ -1,0 +1,13 @@
+{
+  "name": "packer",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "description": "Packer machine",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[packer]",
+    "recipe[docker]"
+  ]
+}
