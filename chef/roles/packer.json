@@ -3,11 +3,27 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "rvm": {
+      "vagrant": {
+        "system_chef_solo": "/usr/bin/chef-solo",
+        "system_chef_client": "/usr/bin/chef-client"
+      },
+      "global_gems": [
+        {
+          "name": "bundler"
+        },
+        {
+          "name": "berkshelf"
+        }
+      ]
+    }
   },
   "description": "Packer machine",
   "run_list": [
     "recipe[apt]",
     "recipe[packer]",
+    "recipe[rvm::system]",
+    "recipe[rvm::vagrant]",
     "recipe[docker]"
   ]
 }

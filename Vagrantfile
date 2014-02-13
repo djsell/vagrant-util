@@ -26,5 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "role[packer]",
       ]
     end
+
+    packer.vm.provision :shell, :inline => "usermod -a -G docker vagrant"
   end
 end
