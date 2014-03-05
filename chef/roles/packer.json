@@ -3,6 +3,10 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "packer": {
+      "version": "0.5.2",
+      "checksum": "813f856a3d326d2a65f561edac8050d981f93ea51da03b0fb6b3d72010a5fc96"
+    },
     "rvm": {
       "vagrant": {
         "system_chef_solo": "/usr/bin/chef-solo",
