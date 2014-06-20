@@ -24,7 +24,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # https://github.com/mitchellh/vagrant/issues/713
     packer.vm.provider :virtualbox do |v|
       v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+      v.cpus = 4
+      v.memory = 2048
     end
+
+    packer.vm.synced_folder "..", "/projects"
 
     # install aufs support
     # http://docs.docker.io/en/latest/installation/ubuntulinux/#ubuntu-raring-13-04-and-saucy-13-10-64-bit
