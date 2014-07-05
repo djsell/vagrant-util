@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 # vagrant plugin install vagrant-lxc
-# vagrant plugin install vagrant-berkshelf
 # vagrant plugin install vagrant-omnibus
+# vagrant plugin install vagrant-berkshelf --plugin-version=2.0.1
 
 VAGRANTFILE_API_VERSION = "2"
 
@@ -25,7 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     packer.vm.provider :virtualbox do |v|
       v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
       v.cpus = 4
-      v.memory = 2048
+      #v.memory = 2048
+      v.memory = 4096
     end
 
     packer.vm.synced_folder "..", "/projects"

@@ -8,6 +8,7 @@
       "checksum": "3c3c2d5fff21e0ba9aa25a18fcdf8ec04fbbd2f7364c74d843124336d1d7b36c"
     },
     "rvm": {
+      "default_ruby": "ruby-2.1.2",
       "vagrant": {
         "system_chef_solo": "/usr/bin/chef-solo",
         "system_chef_client": "/usr/bin/chef-client"
